@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'jacoco'
-apply from: 'gradle-mvn-push.gradle'
-apply from: 'checkstyle.gradle'
+// apply plugin: 'jacoco'
+// apply from: 'gradle-mvn-push.gradle'
+// apply from: 'checkstyle.gradle'
 
 
 android {
@@ -22,6 +22,6 @@ android {
 }
 
 dependencies {
-  testImplementation 'junit:junit:4.12'
+  // testImplementation 'junit:junit:4.12'
   implementation 'com.android.support:support-annotations:' + gradle.supportLibraryVersion
 }
