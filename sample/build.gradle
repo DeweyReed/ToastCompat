@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion gradle.compileSdkVersion
+  namespace = "me.drakeet.toast.sample"
+  compileSdk gradle.compileSdkVersion
 
   defaultConfig {
     applicationId "me.drakeet.toast.sample"
-    minSdkVersion gradle.minSdkVersion
-    targetSdkVersion gradle.targetSdkVersion
+    minSdk gradle.minSdkVersion
+    targetSdk gradle.targetSdkVersion
     versionCode gradle.versionCode
     versionName gradle.versionName
     testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -20,8 +21,8 @@ android {
   }
 
   compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
   }
 }
 
@@ -29,7 +30,7 @@ android {
 dependencies {
   implementation project(':library')
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation 'androidx.appcompat:appcompat:1.4.2'
+  implementation 'androidx.appcompat:appcompat:1.7.0'
   // testImplementation 'junit:junit:4.12'
   // androidTestImplementation 'com.android.support.test:runner:1.0.2'
   // androidTestImplementation 'com.android.support.test:rules:1.0.2'

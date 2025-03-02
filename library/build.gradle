@@ -3,16 +3,18 @@ apply plugin: 'com.android.library'
 // apply from: 'gradle-mvn-push.gradle'
 // apply from: 'checkstyle.gradle'
 apply plugin: 'maven-publish'
+apply plugin: 'kotlin-android'
 
 group = 'com.github.DeweyReed'
-version = '1.0'
+version = '1.1'
 
 android {
-  compileSdkVersion gradle.compileSdkVersion
+  namespace = "me.drakeet.support.toast"
+  compileSdk gradle.compileSdkVersion
 
   defaultConfig {
-    minSdkVersion gradle.minSdkVersion
-    targetSdkVersion gradle.targetSdkVersion
+    minSdk gradle.minSdkVersion
+    targetSdk gradle.targetSdkVersion
     versionCode gradle.versionCode
     versionName gradle.versionName
   }
@@ -22,11 +24,16 @@ android {
       minifyEnabled false
     }
   }
+  publishing {
+    singleVariant('release') {
+      withSourcesJar()
+    }
+  }
 }
 
 dependencies {
   // testImplementation 'junit:junit:4.12'
-  implementation 'androidx.appcompat:appcompat:1.4.2'
+  implementation 'androidx.appcompat:appcompat:1.7.0'
 }
 
 afterEvaluate {
@@ -37,7 +44,7 @@ afterEvaluate {
         from components.release
         groupId = 'com.github.DeweyReed'
         artifactId = 'toastcompat'
-        version = '1.0'
+        version = '1.1'
       }
     }
   }

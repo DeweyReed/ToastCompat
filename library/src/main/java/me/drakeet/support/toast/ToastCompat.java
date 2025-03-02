@@ -83,6 +83,10 @@ public final class ToastCompat extends Toast {
     toast.show();
   }
 
+  @Override
+  public void cancel() {
+    toast.cancel();
+  }
 
   @Override
   public void setDuration(int duration) {
